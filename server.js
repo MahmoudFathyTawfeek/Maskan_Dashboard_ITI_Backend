@@ -1,3 +1,5 @@
+console.log("🚀 Starting server...");
+
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -21,8 +23,6 @@ import './models/booking.js';
 import './models/user.js';
 import './models/listing.js'; // لازم تستورد listing كمان علشان البيندنج يشتغل
 
-
-console.log("🚀 Starting server...");
 
 
 dotenv.config();
