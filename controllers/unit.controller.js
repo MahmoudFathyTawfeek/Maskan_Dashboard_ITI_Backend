@@ -1,7 +1,8 @@
-const Unit = require("../models/unit");
+// controllers/unit.controller.js
+import Unit from "../models/unit.js";
 
 // GET all units
-exports.getAllUnits = async (req, res) => {
+export const getAllUnits = async (req, res) => {
   try {
     const units = await Unit.find();
     res.json(units);
@@ -11,7 +12,7 @@ exports.getAllUnits = async (req, res) => {
 };
 
 // GET unit by ID
-exports.getUnitById = async (req, res) => {
+export const getUnitById = async (req, res) => {
   try {
     const unit = await Unit.findById(req.params.id);
     if (!unit) return res.status(404).json({ message: "Unit not found" });
@@ -22,7 +23,7 @@ exports.getUnitById = async (req, res) => {
 };
 
 // POST create unit
-exports.createUnit = async (req, res) => {
+export const createUnit = async (req, res) => {
   try {
     const unit = new Unit(req.body);
     await unit.save();
@@ -33,7 +34,7 @@ exports.createUnit = async (req, res) => {
 };
 
 // PUT update unit
-exports.updateUnit = async (req, res) => {
+export const updateUnit = async (req, res) => {
   try {
     const updated = await Unit.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!updated) return res.status(404).json({ message: "Unit not found" });
@@ -44,7 +45,7 @@ exports.updateUnit = async (req, res) => {
 };
 
 // DELETE unit
-exports.deleteUnit = async (req, res) => {
+export const deleteUnit = async (req, res) => {
   try {
     const deleted = await Unit.findByIdAndDelete(req.params.id);
     if (!deleted) return res.status(404).json({ message: "Unit not found" });

@@ -1,9 +1,10 @@
-console.log("🚀 Starting server...");
+console.log("🚀 Starting server.js ...");
+
 
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import connectDB from './config/db.js';
+import connectDB from './config/db.js'; 
 
 // تحميل الراوترات
 import userRoutes from './routes/user.js';
@@ -16,12 +17,13 @@ import pendingListingRoutes from './routes/pendinglisting.js';
 import authRoutes from "./routes/auth.js";
 
 
-// تحميل الموديلات (علشان تتسجل في mongoose)
+// تحميل الموديلات (علشان تتسجل في mongoose) 
 import './models/categoryModel.js';
 import './models/amenityModel.js';
 import './models/booking.js';
 import './models/user.js';
 import './models/listing.js'; // لازم تستورد listing كمان علشان البيندنج يشتغل
+
 
 
 
