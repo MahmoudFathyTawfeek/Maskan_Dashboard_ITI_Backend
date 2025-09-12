@@ -1,5 +1,5 @@
 // models/Unit.js
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const unitSchema = new mongoose.Schema({
   title: {
@@ -34,4 +34,5 @@ const unitSchema = new mongoose.Schema({
   timestamps: true // optional: adds createdAt and updatedAt
 });
 
-module.exports = mongoose.model('Unit', unitSchema);
+const Unit = mongoose.model("Unit", unitSchema);
+export default Unit; 
